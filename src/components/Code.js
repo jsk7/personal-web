@@ -48,7 +48,7 @@ class Code extends React.Component {
                 <h5>Working since {this.props.git.user_since}</h5>
                 <h5>Currently at {this.props.git.company} in {this.props.git.location}</h5>
               </Col>
-              <Col lg={6} md={6} sm={6} xs={6} pullRight>
+              <Col lg={6} md={6} sm={6} xs={6}>
               <div className="gmap pull-right">
                 <GoogleMap
                   center={{lat: this.props.git.lat, lng: this.props.git.lng}}

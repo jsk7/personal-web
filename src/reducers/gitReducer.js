@@ -11,16 +11,15 @@ import dateFns from 'date-fns';
 export default function githubProfile(state = initialState.github, action) {
   let newState;
 
-
-
   switch (action.type) {
     case t.GITHUB_PROFILE_REQUEST:
-      // For this example, just simulating a save by changing date modified.
-      // In a real app using Redux, you might use redux-thunk and handle the async call in fuelSavingsActions.js
-      return state;
+      newState = objectAssign({}, state);
+      newState.isFetching = true;
+      return newState;
 
     case t.GITHUB_PROFILE_SUCCESS:
       newState = objectAssign({}, state);
+      newState.isFetching = false;
       const gh = action.value;
       newState.user = gh.login;
       newState.avatar = gh.avatar_url;
@@ -33,20 +32,28 @@ export default function githubProfile(state = initialState.github, action) {
       newState.loved_repos = gh.subscriptions_url;
       return newState;
 
+    case t.GITHUB_PROFILE_FAILED:
+      newState = objectAssign({}, state);
+      newState.isFetching = true;
+      return newState;
+
     case t.GMAPS_GEOLOCATION_GIT_REQUEST:
-      return state;
+      newState = objectAssign({}, state);
+      newState.isFetching = true;
+      return newState;
 
     case t.GMAPS_GEOLOCATION_GIT_SUCCESS:
       newState = objectAssign({}, state);
+      newState.isFetching = false;
       const ld = action.locationData;
       newState.lat = ld.results[0].geometry.location.lat;
       newState.lng = ld.results[0].geometry.location.lng;
       return newState;
 
     case t.GMAPS_GEOLOCATION_GIT_FAILED:
-      // For this example, just simulating a save by changing date modified.
-      // In a real app using Redux, you might use redux-thunk and handle the async call in fuelSavingsActions.js
-      return state;
+      newState = objectAssign({}, state);
+      newState.isFetching = false;
+      return newState;
 
     default:
       return state;

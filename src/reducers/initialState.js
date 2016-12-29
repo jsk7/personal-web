@@ -10,7 +10,8 @@ export default {
     lng: 0,
     public_repos: "",
     repos_url: "",
-    loved_repos: ""
+    loved_repos: "",
+    isFetching: false
 
   }
 };

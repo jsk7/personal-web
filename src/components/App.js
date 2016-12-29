@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Grid, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import {LinkContainer, IndexLinkContainer} from 'react-router-bootstrap';
+import LoadingBar from 'react-redux-loading-bar';
 
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
@@ -12,9 +13,9 @@ export default class App extends React.Component {
 
     return (
       <div>
-
-        <Navbar fluid fixedTop inverse collapseOnSelect>
+        <Navbar fluid inverse collapseOnSelect>
           <Navbar.Header>
+            <LoadingBar className="loading-bar"/>
             <Navbar.Brand>
               <IndexLinkContainer to="/">
                 <div>
