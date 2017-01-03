@@ -65,6 +65,26 @@ class Code extends React.Component {
                   )
                 }
               </Row>
+              <Row>
+                <Col lg={12} md={12} sm={12} xs={12}>
+                  <h4>
+                    Repos que sigo:
+                  </h4>
+                </Col>
+              </Row>
+              <Row>
+                {
+                  this.props.git.loved_repos.map(
+                    (repo) => (
+                      <Col lg={3} md={3} sm={4} xs={6}>
+                        <h6>
+                          {repo.full_name}
+                        </h6>
+                      </Col>
+                    )
+                  )
+                }
+              </Row>
             </Row>
           </Col>
 

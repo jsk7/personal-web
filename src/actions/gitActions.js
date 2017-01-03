@@ -24,7 +24,7 @@ export function fetchGithubProfileData() {
     }).then(function(json) {
       dispatch(fetchGeolocationData(json.location));
       dispatch(fetchGithubReposData(json.repos_url));
-      dispatch(fetchGithubLovedReposData(json.subscriptions_url));
+      dispatch(fetchGithubLovedReposData(json.starred_url));
     }).catch(function(err) {
       console.log(err);
       dispatch({ type: types.GITHUB_PROFILE_FAILED });
@@ -73,7 +73,10 @@ export function fetchGithubReposData(api_url) {
 }
 
 export function fetchGithubLovedReposData(api_url) {
-  console.log(api_url);
+  //Since the api provides optional parameters and we dont want that we'll remove them
+  const startOfOptionalParams = api_url.indexOf("{/");
+  api_url = api_url.slice(0,startOfOptionalParams);
+
   return dispatch => {
   // Reducers may handle this to set a flag like isFetching
   dispatch({ type: types.GITHUB_LOVEDREPOS_REQUEST });
@@ -84,6 +87,10 @@ export function fetchGithubLovedReposData(api_url) {
       return response.json();
     })
     .then(function(json) {
+
+      json.sort(
+        (a,b) => (b.stargazers_count-a.stargazers_count)
+      )
       dispatch({ type: types.GITHUB_LOVEDREPOS_SUCCESS, repos: json});
       return dispatch(hideLoading());
     }).catch(function(err) {
