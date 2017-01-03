@@ -6,7 +6,7 @@ const HomePage = () => {
     <div className="home">
       <h1>@futurejuan</h1>
 
-      <h4>Only a life lived for others is a life worthwhile</h4>
+      <h4>Some some catchy phrase</h4>
 
     </div>
   );

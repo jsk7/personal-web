@@ -18,45 +18,62 @@ class Code extends React.Component {
 
     return (
       <Grid fluid>
-        <Row>
-          <Col
-            lg={2}
-            md={2}
-            sm={3}
-            xs={12}>
-            <div className="git_avatar">
-            <Image responsive src={this.props.git.avatar}
-                    circle />
-            </div>
+          <Row>
+            <Col lg={6} md={6} sm={6} xs={6}>
+              <Row>
+                <Col
+                  lg={4}
+                  md={4}
+                  sm={4}
+                  xs={4}>
+                  <div className="git_avatar">
+                  <Image  responsive
+                          src={this.props.git.avatar}
+                          circle />
+                  </div>
 
-          </Col>
-          <Col
-            lg={10}
-            md={10}
-            sm={9}
-            xs={12}>
+                </Col>
 
-
-            <Row>
-
-              <Col lg={6} md={6} sm={6} xs={6}>
-              <Col lg={12} md={12}  xsHidden={true}><div className="git-margin"></div></Col>
-                <h4 className="git-name">
-                  Mr.
-                  <a href={this.props.git.url}> @futurejuan</a>
-                </h4>
-                <h5>Working since {this.props.git.user_since}</h5>
-                <h5>Currently at {this.props.git.company} in {this.props.git.location}</h5>
-              </Col>
-              <Col lg={6} md={6} sm={6} xs={6}>
-              <div className="gmap pull-right">
-                <GoogleMap
-                  center={{lat: this.props.git.lat, lng: this.props.git.lng}}
-                  defaultZoom={11}>
-                </GoogleMap>
-              </div>
-              </Col>
+                <Col lg={6} md={6} sm={6} xs={6}>
+                <Col lg={12} md={12} xsHidden><div className="git-margin" /></Col>
+                  <h4 className="git-name">
+                    Mr.
+                    <a href={this.props.git.url}> @futurejuan</a>
+                  </h4>
+                  <h5>Working since {this.props.git.user_since}</h5>
+                  <h5>Currently at {this.props.git.company} in {this.props.git.location}</h5>
+                </Col>
             </Row>
+            <Row>
+              <Row>
+                <Col lg={12} md={12} sm={12} xs={12}>
+                  <h4>
+                    Repos:
+                  </h4>
+                </Col>
+              </Row>
+              <Row>
+                {
+                  this.props.git.repos.map(
+                    (repo) => (
+                      <Col lg={3} md={3} sm={4} xs={6}>
+                        <h6>
+                          {repo.name}
+                        </h6>
+                      </Col>
+                    )
+                  )
+                }
+              </Row>
+            </Row>
+          </Col>
+
+          <Col lg={6} md={6} sm={6} xs={6} bsClass="gmap-right">
+            <div className="gmap pull-right">
+              <GoogleMap
+                center={{lat: this.props.git.lat, lng: this.props.git.lng}}
+                defaultZoom={11} />
+            </div>
           </Col>
         </Row>
       </Grid>

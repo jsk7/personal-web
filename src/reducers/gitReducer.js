@@ -29,12 +29,43 @@ export default function githubProfile(state = initialState.github, action) {
       newState.location = gh.location;
       newState.public_repos = gh.public_repos;
       newState.repos_url = gh.repos_url;
-      newState.loved_repos = gh.subscriptions_url;
       return newState;
 
     case t.GITHUB_PROFILE_FAILED:
       newState = objectAssign({}, state);
+      newState.isFetching = false;
+      return newState;
+
+    case t.GITHUB_REPOS_REQUEST:
+      newState = objectAssign({}, state);
       newState.isFetching = true;
+      return newState;
+
+    case t.GITHUB_REPOS_SUCCESS:
+      newState = objectAssign({}, state);
+      newState.isFetching = false;
+      newState.repos = action.repos;
+      return newState;
+
+    case t.GITHUB_REPOS_FAILED:
+      newState = objectAssign({}, state);
+      newState.isFetching = false;
+      return newState;
+
+    case t.GITHUB_LOVEDREPOS_REQUEST:
+      newState = objectAssign({}, state);
+      newState.isFetching = true;
+      return newState;
+
+    case t.GITHUB_LOVEDREPOS_SUCCESS:
+      newState = objectAssign({}, state);
+      newState.isFetching = false;
+      newState.loved_repos = action.repos;
+      return newState;
+
+    case t.GITHUB_REPOS_FAILED:
+      newState = objectAssign({}, state);
+      newState.isFetching = false;
       return newState;
 
     case t.GMAPS_GEOLOCATION_GIT_REQUEST:
