@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {Grid, Col, Row, Image} from 'react-bootstrap';
 import GoogleMap from 'google-map-react';
+import {RepoBox} from './RepoBox';
 
 class Code extends React.Component {
   constructor(props, context) {
@@ -47,49 +48,40 @@ class Code extends React.Component {
             <Row>
               <Col lg={12} md={12} sm={12} xs={12}>
                 <hr />
-                  <h4>
-                    Repos:
-                  </h4>
+                <h4>
+                  Repos:
+                </h4>
                 <hr />
               </Col>
                 {
+                  this.props.git.repos.length > 1 &&
                   this.props.git.repos.map(
                     (repo) => (
-                      <Col lg={4} md={4} sm={4} xs={6} key={repo.id} className="box-padding">
-                        <a href={repo.html_url} className="no-style">
-                          <div className="box">
-                            <div className="box__content box__content--centered">
-                              <h6>
-                                {repo.name}
-                              </h6>
-                            </div>
-                          </div>
-                        </a>
-                      </Col>
+                      <RepoBox href={repo.html_url}
+                               boxClassName="box"
+                               contentClassName="box__content box__content--centered"
+                               key={repo.id.toString()}
+                               repo={repo} />
                     )
                   )
                 }
               <Col lg={12} md={12} sm={12} xs={12}>
                 <hr />
-                  <h4>
-                    Repos que sigo:
-                  </h4>
+                <h4>
+                  Repos que sigo:
+                </h4>
                 <hr />
               </Col>
                 {
+                  this.props.git.loved_repos.length > 1 &&
                   this.props.git.loved_repos.map(
                     (repo) => (
-                      <Col lg={4} md={4} sm={4} xs={6} key={repo.id} className="box-padding">
-                        <a href={repo.html_url} className="no-style">
-                          <div className="box">
-                            <div className="box__content box__content--centered">
-                              <h6>
-                                {repo.full_name}
-                              </h6>
-                            </div>
-                          </div>
-                        </a>
-                      </Col>
+                      <RepoBox href={repo.html_url}
+                               boxClassName="box"
+                               contentClassName="box__content box__content--centered"
+                               key={repo.id.toString()}
+                               repo={repo} />
+
                     )
                   )
                 }
