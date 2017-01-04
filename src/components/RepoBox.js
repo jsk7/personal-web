@@ -1,10 +1,14 @@
 import React, {PropTypes} from 'react';
 import {Col} from 'react-bootstrap';
+import {GitLogo} from './GitLogo';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 export class RepoBox extends React.Component {
   constructor(props, context) {
     super(props, context);
-    let children;
+    this.state = {
+      mouseOver: false
+    };
   }
 
   randomColors() {
@@ -16,27 +20,47 @@ export class RepoBox extends React.Component {
   }
 
   render() {
-    console.log(window.innerWidth);
+    function hover(e) {
+      e.preventDefault();
+      this.setState({
+        mouseOver: !this.state.mouseOver
+      });
+    }
     return (
         <Col lg={4} md={4} sm={6} xs={6} className="box-padding" >
           <a href={this.props.href} className="no-style">
-            <div className={this.props.boxClassName}>
-              <div className={this.props.contentClassName}>
-                <div className="text-center repo_name_margin">
-                  <div className="circle" style={{backgroundColor: this.randomColors()}} />
-                  <h6 className="repo_name" key="title">
-                    {this.props.repo.name}
-                  </h6>
-                  </div>
-                  <br />
-                  <Col xsHidden>
-                    <div>
-                      <p className="text-center">{this.props.repo.description}</p>
-                      <br />
-                      <h4 className="text-bottom text-center">{this.props.repo.language}</h4>
+            <div>
+              <div className={this.props.boxClassName}>
+                <div className={this.props.contentClassName} onMouseEnter={hover.bind(this)} onMouseLeave={hover.bind(this)}>
+                  <div className="text-center repo_name_margin">
+                    <div className="circle" style={{backgroundColor: this.randomColors()}} />
+                    <h6 className="repo_name" key="title">
+                      {this.props.repo.name}
+                    </h6>
                     </div>
-                  </Col>
+                    {
+                      this.state.mouseOver &&
+                      <ReactCSSTransitionGroup
+                        transitionName="example"
+                        transitionAppear={true}
+                        transitionAppearTimeout={500}
 
+                        key={this.props.repo.id}>
+
+                        <GitLogo color="#fff" />
+
+                      </ReactCSSTransitionGroup>
+                    }
+                    <br />
+                    <Col xsHidden>
+                      <div>
+                        <p className="text-center">{this.props.repo.description}</p>
+                        <br />
+                        <h4 className="text-bottom text-center">{this.props.repo.language}</h4>
+                      </div>
+                    </Col>
+
+                </div>
               </div>
             </div>
           </a>
