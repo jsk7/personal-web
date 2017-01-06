@@ -3,6 +3,7 @@ import { Grid, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstr
 import {LinkContainer, IndexLinkContainer} from 'react-router-bootstrap';
 import LoadingBar from 'react-redux-loading-bar';
 
+
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
 // component at the top-level.
@@ -19,7 +20,7 @@ export default class App extends React.Component {
             <Navbar.Brand>
               <IndexLinkContainer to="/">
                 <div>
-                  home
+                  JB
                 </div>
               </IndexLinkContainer>
             </Navbar.Brand>
