@@ -44,7 +44,6 @@ export class RepoBox extends React.Component {
                         transitionName="example"
                         transitionAppear={true}
                         transitionAppearTimeout={500}
-
                         key={this.props.repo.id}>
 
                         <GitLogo color="#fff" />
@@ -54,7 +53,7 @@ export class RepoBox extends React.Component {
                     <br />
                     <Col xsHidden>
                       <div>
-                        <p className="text-center">{this.props.repo.description}</p>
+                        <p className="text-center small">{this.props.repo.description}</p>
                         <br />
                         <h4 className="text-bottom text-center">{this.props.repo.language}</h4>
                       </div>
