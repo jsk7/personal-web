@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import {Col} from 'react-bootstrap';
 
 
 const HomePage = (props) => {
@@ -15,10 +16,13 @@ const HomePage = (props) => {
       transitionLeaveTimeout={300}
       key={1}>
     <div className="home">
-      <h1>@futurejuan</h1>
-
-      <h4>Some some catchy phrase</h4>
-
+      <div className="banner">
+        <img className="profile" src="../icons/profile-size4-v2.jpg" />
+      </div>
+      <Col lg={12}>
+        <h1>@futurejuan</h1>
+        <h4>Some some catchy phrase</h4>
+      </Col>
     </div>
     </ReactCSSTransitionGroup>
   );

@@ -38,3 +38,9 @@ dist
 
 # Mac files
 .DS_Store
+
+# unused icons
+./src/icons/profile-size1.jpg
+./src/icons/profile-size2.jpg
+./src/icons/profile-size3.jpg
+./src/icons/profile-size4.jpg

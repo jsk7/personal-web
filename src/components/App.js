@@ -16,18 +16,19 @@ export default class App extends React.Component {
       <div>
         <Navbar fluid inverse collapseOnSelect>
           <Navbar.Header>
-            <LoadingBar className="loading-bar"/>
             <Navbar.Brand>
-              <IndexLinkContainer to="/">
-                <div>
-                  JB
-                </div>
+              <IndexLinkContainer to="/" >
+                <span>
+                    <div className="spin logo">
+                      <p>JB</p>
+                    </div>
+                </span>
               </IndexLinkContainer>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
           <Navbar.Collapse>
-            <Nav>
+            <Nav pullRight>
               <LinkContainer to="/code">
                 <NavItem eventKey={1} href="#">code</NavItem>
               </LinkContainer>
@@ -42,10 +43,13 @@ export default class App extends React.Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
+        <LoadingBar className="loading-bar"/>
 
         <div className="children">
           {this.props.children}
         </div>
+
+
       </div>
     );
   }
