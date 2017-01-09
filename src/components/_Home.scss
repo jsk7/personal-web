@@ -7,14 +7,77 @@ div .home {
   height: 100%;
   background-color: white;
 
-  h1 {
-    font-size: 3vw;
-    line-height: 1vh;
+  .border {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &.top {
+      &::before{
+        content:"";
+        position: absolute;
+        display: flex;
+        width: 84%;
+        height: 100%;
+        margin-left: 11.8%;
+        border-top: 2px solid rgb(240,240,240);
+      }
+    }
+
+    &.left {
+      &::before{
+        content:"";
+        position: absolute;
+        display: flex;
+        width: 20px;
+        height: 100vh;
+        margin-left: 11.8%;
+        box-shadow:
+          6px 0 white,
+          -3px 0px 25px 1px rgba(240,240,240, 0.7);
+      }
+    }
+
+    &.right {
+      &::before{
+        content:"";
+        right: 0;
+        position: absolute;
+        display: flex;
+        width: 20px;
+        height: 100vh;
+        margin-right: 3.5%;
+        box-shadow:
+          -1px 0 white,
+          10px 0px 25px 1px rgba(240,240,240, 0.7);
+      }
+    }
+
+
   }
 
-  h4 {
-    font-size: 1.5vw;
+  .central {
+    top: 0;
+    display: table;
+    position: relative;
+    margin-top: 3vh;
+    height: 100%;
+    width: 100%;
+
+    & > h1 {
+      display: table-row;
+      font-size: 3vw;
+      line-height: 1vh;
+    }
+
+    & > h4 {
+      display: table-row;
+      font-size: 1.5vw;
+    }
   }
+
+
+
 
   .banner {
     position: absolute;
@@ -33,5 +96,28 @@ div .home {
       width: 100vw;
       height: 100%;
     }
+  }
+
+  .left {
+    right: 0;
+
+    & .hand {
+      right: 0;
+    }
+
+    & .left {
+      left: 0;
+    }
+  }
+
+
+
+  .hand {
+    position: absolute;
+    display: block;
+    margin-top: 60px;
+    width: 50%;
+    object-fit: cover;
+    object-position: 50% 40%;
   }
 }
