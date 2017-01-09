@@ -17,7 +17,7 @@ div .home {
         content:"";
         position: absolute;
         display: flex;
-        width: 84%;
+        width: 76.5%;
         height: 100%;
         margin-left: 11.8%;
         border-top: 2px solid rgb(240,240,240);
@@ -46,7 +46,7 @@ div .home {
         display: flex;
         width: 20px;
         height: 100vh;
-        margin-right: 3.5%;
+        margin-right: 11.8%;
         box-shadow:
           -1px 0 white,
           10px 0px 25px 1px rgba(240,240,240, 0.7);
@@ -98,20 +98,6 @@ div .home {
     }
   }
 
-  .left {
-    right: 0;
-
-    & .hand {
-      right: 0;
-    }
-
-    & .left {
-      left: 0;
-    }
-  }
-
-
-
   .hand {
     position: absolute;
     display: block;
@@ -119,5 +105,20 @@ div .home {
     width: 50%;
     object-fit: cover;
     object-position: 50% 40%;
+  }
+}
+
+.left {
+  //right: 10px;
+
+  > .hand {
+    right: 0;
+  }
+}
+
+.right {
+  display: block;
+  > .hand {
+    left: 0;
   }
 }

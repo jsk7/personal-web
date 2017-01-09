@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import {Col} from 'react-bootstrap';
+import {Col, Row} from 'react-bootstrap';
 
 
 const HomePage = (props) => {
@@ -19,6 +19,7 @@ const HomePage = (props) => {
       <div className="banner">
         <img className="profile" src="../icons/profile-size4-v2.jpg" />
       </div>
+      <Row>
       <Col lg={1} md={1} sm={1} xsHidden></Col>
       <Col lg={10} md={10} sm={10} xs={12}>
       <div className="border left">
@@ -48,7 +49,7 @@ const HomePage = (props) => {
       </Col>
       <Col lg={1} md={1} sm={1} xsHidden></Col>
 
-
+      </Row>
     </div>
     </ReactCSSTransitionGroup>
   );
