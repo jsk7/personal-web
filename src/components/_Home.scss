@@ -55,6 +55,18 @@ div .home {
       }
     }
 
+    &.bottom {
+      &::before{
+        content:"";
+        position: absolute;
+        display: flex;
+        width: 76.5%;
+        height: 100%;
+        margin-left: 11.8%;
+        border-bottom: 2px solid rgb(240,240,240);
+      }
+    }
+
 
   }
 
@@ -62,12 +74,10 @@ div .home {
     top: 0;
     display: table;
     position: relative;
-    margin-top: 3vh;
     height: $signboard-size;
     width: 100%;
 
     & > h1 {
-      display: table-row;
       font-size: 3vw;
       line-height: 1vh;
     }

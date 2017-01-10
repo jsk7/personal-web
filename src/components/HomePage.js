@@ -25,6 +25,7 @@ const HomePage = (props) => {
       <div className="border left">
       <div className="border top">
       <div className="border right">
+      <div className="border bottom">
         <Col lg={2} md={2} sm={2} xs={2}>
           <div className="left">
             <img className="hand" src="../icons/hand-leftside-v2.jpg" />
@@ -44,6 +45,7 @@ const HomePage = (props) => {
             <img className="hand" src="../icons/hand-rightside-v2.jpg" />
           </div>
         </Col>
+        </div>
         </div>
         </div>
         </div>
