@@ -37,6 +37,7 @@ const HomePage = (props) => {
               <h4>Some some catchy phrase</h4>
               <p>hola<br />s<br />a<br />c</p>
             </div>
+
         </Col>
         <Col lg={2} md={2} sm={2} xs={2}>
           <div className="right">
@@ -50,6 +51,10 @@ const HomePage = (props) => {
       <Col lg={1} md={1} sm={1} xsHidden></Col>
 
       </Row>
+
+      <div className="footer">
+        <img src="../icons/legs-size3.jpg" />
+      </div>
     </div>
     </ReactCSSTransitionGroup>
   );
