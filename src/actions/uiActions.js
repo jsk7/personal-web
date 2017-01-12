@@ -8,3 +8,10 @@ export function openModal(e) {
 export function closeModal() {
   return { type: types.CLOSE_MODAL };
 }
+
+export function copyToClipboard(e) {
+  e.preventDefault();
+  e.target.select();
+  document.execCommand('copy');
+  return { type: types.COPY_MAIL };
+}

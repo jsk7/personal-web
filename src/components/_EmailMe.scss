@@ -18,3 +18,23 @@
     height: 30px;
   }
 }
+
+input {
+  &.mail {
+    text-align: center;
+
+    &.moved-down {
+      transition-timing-function: ease;
+      transition: margin 200ms;
+      margin-top: 5px;
+    }
+  }
+
+}
+
+div.center {
+  display: block;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}

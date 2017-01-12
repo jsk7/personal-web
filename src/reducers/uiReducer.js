@@ -14,6 +14,12 @@ export function ui(state = initialState.ui, action) {
     case t.CLOSE_MODAL:
       newState = objectAssign({}, state);
       newState.openModal = false;
+      newState.mailCopied = false;
+      return newState;
+
+    case t.COPY_MAIL:
+      newState = objectAssign({}, state);
+      newState.mailCopied = true;
       return newState;
 
     default:

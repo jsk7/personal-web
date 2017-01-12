@@ -20,5 +20,6 @@ export default {
   },
   ui: {
     showModal: false,
+    mailCopied: false
   }
 };

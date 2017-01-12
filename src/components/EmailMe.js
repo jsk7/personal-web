@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import {  Modal, Button, Col, Image, Grid } from 'react-bootstrap';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import {  Modal, Button, Col, Image, Grid, Tooltip, OverlayTrigger } from 'react-bootstrap';
 
 
 export default class EmailMe extends React.Component {
@@ -9,10 +10,11 @@ export default class EmailMe extends React.Component {
 
   render() {
     return (
-      <div>
       <Modal show={this.props.ui.openModal} onHide={this.props.uiActions.closeModal} >
         <Modal.Header closeButton>
-          <Modal.Title>Email.Me</Modal.Title>
+          <div className="center">
+            <Modal.Title>Email.Me</Modal.Title>
+          </div>
         </Modal.Header>
         <Modal.Body>
           <Col lg={4} md={4} sm={4} xs={4}>
@@ -41,15 +43,31 @@ export default class EmailMe extends React.Component {
           </Col>
           <Col lg={12} md={12} sm={12} xs={12}>
             <hr />
-            <h4>Copia mi e-mail</h4>
-            <h4>Tooltips in a modal</h4>
+            <div className="center">
+            <ReactCSSTransitionGroup
+              transitionName="fade"
+              transitionAppear={true}
+              transitionAppearTimeout={500}
+              transitionEnter={true}
+              transitionEnterTimeout={500}
+              transitionLeave={true}
+              transitionLeaveTimeout={500}
+              key={1}>
+              {this.props.ui.mailCopied && <p>Mail copiado al portapapeles, use CTRL + V para pegar</p>}
+            </ReactCSSTransitionGroup>
+            <input size="30" type="text"
+                  className={'mail ' + (this.props.ui.mailCopied ? 'moved-down' : '')}
+                  onClick={this.props.uiActions.copyToClipboard}
+                  value="juan.biltes@gmail.com" readOnly />
+            </div>
           </Col>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={this.props.uiActions.closeModal}>Close</Button>
+          <div className="center">
+            <Button onClick={this.props.uiActions.closeModal}>Cerrar</Button>
+          </div>
         </Modal.Footer>
       </Modal>
-      </div>
     );
   }
 }
@@ -59,6 +77,10 @@ const mail = {
   body: 'Hola Juani,',
   address: 'juan.biltes@gmail.com'
 }
+
+const tooltip = (
+  <Tooltip id="tooltip"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
+);
 
 EmailMe.propTypes = {
   uiActions: PropTypes.object.isRequired,
