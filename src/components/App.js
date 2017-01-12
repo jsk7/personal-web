@@ -43,7 +43,9 @@ export class App extends React.Component {
               <NavDropdown eventKey={3} title="contact.me" id="basic-nav-dropdown">
                 <MenuItem eventKey={3.1} onClick={this.props.uiActions.openModal}>E-mail</MenuItem>
                 <MenuItem divider />
-                <MenuItem eventKey={3.3}><a className="no-style">Linkedin</a></MenuItem>
+                <MenuItem eventKey={3.3} href="http://www.linkedin.com/in/juanignaciobiltes">
+                    Linkedin
+                </MenuItem>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
