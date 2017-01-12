@@ -29,17 +29,6 @@ class Code extends React.Component {
         key={0}>
         <Grid fluid className="code">
             <Row>
-              <Col lg={5} md={5} sm={5} xsHidden className="gmap-right">
-                <div className="gmap pull-right">
-                  <GoogleMap
-                    center={{lat: this.props.git.lat-screenOffset, lng: this.props.git.lng}}
-                    defaultZoom={11}
-                    options= {{
-                      draggable: false,
-                      scrollwheel: false
-                    }} />
-                </div>
-              </Col>
               <Col lg={7} md={7} sm={7} xs={12}>
                 <Row>
                   <Col
@@ -69,7 +58,7 @@ class Code extends React.Component {
                     <div className="gmap center">
                       <GoogleMap
                         center={{lat: this.props.git.lat, lng: this.props.git.lng}}
-                        defaultZoom={10}
+                        defaultZoom={11}
                         options= {{
                           draggable: false,
                           scrollwheel: false
@@ -118,6 +107,17 @@ class Code extends React.Component {
                     )
                   }
               </Row>
+            </Col>
+            <Col lg={5} md={5} sm={5} xsHidden className="gmap-right">
+              <div className="gmap pull-right">
+                <GoogleMap
+                  center={{lat: this.props.git.lat-screenOffset, lng: this.props.git.lng}}
+                  defaultZoom={11}
+                  options= {{
+                    draggable: false,
+                    scrollwheel: false
+                  }} />
+              </div>
             </Col>
           </Row>
         </Grid>
