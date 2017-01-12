@@ -38,3 +38,29 @@ div.center {
   width: 100%;
   text-align: center;
 }
+
+p {
+  &.hr {
+    overflow: hidden;
+    text-align: center;
+    color: rgba(0,0,0,0.6);
+    &:before,
+    &:after {
+        background-color: rgba(0,0,0,0.2);
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        width: 50%;
+    }
+    &:before {
+        right: 0.5em;
+        margin-left: -50%;
+    }
+    &:after {
+        left: 0.5em;
+        margin-right: -50%;
+    }
+  }
+}

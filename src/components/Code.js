@@ -28,9 +28,19 @@ class Code extends React.Component {
         transitionLeave={false}
         key={0}>
         <Grid fluid className="code">
-
             <Row>
-              <Col lg={7} md={7} sm={7} xs={7}>
+              <Col lg={5} md={5} sm={5} xsHidden className="gmap-right">
+                <div className="gmap pull-right">
+                  <GoogleMap
+                    center={{lat: this.props.git.lat-screenOffset, lng: this.props.git.lng}}
+                    defaultZoom={11}
+                    options= {{
+                      draggable: false,
+                      scrollwheel: false
+                    }} />
+                </div>
+              </Col>
+              <Col lg={7} md={7} sm={7} xs={12}>
                 <Row>
                   <Col
                     lg={4}
@@ -53,6 +63,18 @@ class Code extends React.Component {
                     </h4>
                     <h5>Working since {this.props.git.user_since}</h5>
                     <h5>Currently at {this.props.git.company} in {this.props.git.location}</h5>
+                  </Col>
+
+                  <Col lgHidden mdHidden smHidden xs={12}>
+                    <div className="gmap center">
+                      <GoogleMap
+                        center={{lat: this.props.git.lat, lng: this.props.git.lng}}
+                        defaultZoom={10}
+                        options= {{
+                          draggable: false,
+                          scrollwheel: false
+                        }} />
+                    </div>
                   </Col>
               </Row>
               <Row>
@@ -96,18 +118,6 @@ class Code extends React.Component {
                     )
                   }
               </Row>
-            </Col>
-
-            <Col lg={5} md={5} sm={5} xs={5} className="gmap-right">
-              <div className="gmap pull-right">
-                <GoogleMap
-                  center={{lat: this.props.git.lat-screenOffset, lng: this.props.git.lng}}
-                  defaultZoom={11}
-                  options= {{
-                    draggable: false,
-                    scrollwheel: false
-                  }} />
-              </div>
             </Col>
           </Row>
         </Grid>

@@ -38,7 +38,7 @@ export class App extends React.Component {
           <Navbar.Collapse>
             <Nav pullRight>
               <LinkContainer to="/code">
-                <NavItem eventKey={1} href="#">code</NavItem>
+                <NavItem eventKey={1} href="#">code.me</NavItem>
               </LinkContainer>
               <NavDropdown eventKey={3} title="contact.me" id="basic-nav-dropdown">
                 <MenuItem eventKey={3.1} onClick={this.props.uiActions.openModal}>E-mail</MenuItem>

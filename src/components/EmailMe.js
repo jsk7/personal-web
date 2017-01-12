@@ -10,7 +10,7 @@ export default class EmailMe extends React.Component {
 
   render() {
     return (
-      <Modal show={this.props.ui.openModal} onHide={this.props.uiActions.closeModal} >
+      <Modal show={this.props.ui.openModal} onHide={this.props.uiActions.closeModal} className="modal-position">
         <Modal.Header closeButton>
           <div className="center">
             <Modal.Title>Email.Me</Modal.Title>
@@ -42,7 +42,7 @@ export default class EmailMe extends React.Component {
             </a>
           </Col>
           <Col lg={12} md={12} sm={12} xs={12}>
-            <hr />
+            <p className="hr"> ó </p>
             <div className="center">
             <ReactCSSTransitionGroup
               transitionName="fade"
