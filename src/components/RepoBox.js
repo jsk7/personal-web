@@ -27,7 +27,7 @@ export class RepoBox extends React.Component {
       });
     }
     return (
-        <Col lg={4} md={4} sm={6} xs={6} className="box-padding" >
+        <Col lg={4} md={4} sm={6} xs={6} className="box-padding repo-box" >
           <a href={this.props.href} className="no-style">
             <div>
               <div className={this.props.boxClassName}>
@@ -45,9 +45,7 @@ export class RepoBox extends React.Component {
                         transitionAppear={true}
                         transitionAppearTimeout={500}
                         key={this.props.repo.id}>
-
                         <GitLogo color="#fff" />
-
                       </ReactCSSTransitionGroup>
                     }
                     <br />
@@ -55,7 +53,7 @@ export class RepoBox extends React.Component {
                       <div>
                         <p className="text-center small">{this.props.repo.description}</p>
                         <br />
-                        <h4 className="text-bottom text-center">{this.props.repo.language}</h4>
+                        <h4 className="text-bottom text-center language">{this.props.repo.language}</h4>
                       </div>
                     </Col>
 

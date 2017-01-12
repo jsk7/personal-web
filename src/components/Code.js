@@ -27,7 +27,7 @@ class Code extends React.Component {
         transitionEnter={false}
         transitionLeave={false}
         key={0}>
-        <Grid fluid>
+        <Grid fluid className="code">
 
             <Row>
               <Col lg={7} md={7} sm={7} xs={7}>

@@ -1,0 +1,20 @@
+.mail-logo {
+  display: block;
+  height: 40px;
+  vertical-align: middle;
+  margin: auto;
+  text-align: center;
+
+  & > img {
+    vertical-align: middle;
+    margin: auto;
+    height: 100%;
+    max-width: 100%;
+  }
+
+  &.yahoo {
+    vertical-align: middle;
+    margin: 5px auto;
+    height: 30px;
+  }
+}

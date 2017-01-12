@@ -1,6 +1,13 @@
 @import "../components/_index";
 
 
-body {
-  font-family: helvetica !important;
+.no-style {
+  text-decoration: none;
+  color:inherit;
+
+  &:active,
+  &:hover {
+    text-decoration: none;
+    color:inherit;
+  }
 }

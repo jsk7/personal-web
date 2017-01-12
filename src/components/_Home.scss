@@ -9,6 +9,11 @@ div .home {
   height: $signboard-size;
   background-color: white;
 
+  ul {
+    text-align: left;
+    font-size: 10px;
+  }
+
   .border {
     position: relative;
     width: 100%;
@@ -78,13 +83,13 @@ div .home {
     width: 100%;
 
     & > h1 {
-      font-size: 3vw;
-      line-height: 1vh;
+      font-size: calc(12px + 2.3vw);
+      line-height: 40px;
     }
 
     & > h4 {
-      display: table-row;
-      font-size: 1.5vw;
+      display: block;
+      font-size: calc(12px + 0.5vw);
     }
   }
 

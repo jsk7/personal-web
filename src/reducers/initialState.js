@@ -17,6 +17,8 @@ export default {
       "",
     ],
     isFetching: false
-
+  },
+  ui: {
+    showModal: false,
   }
 };

@@ -17,8 +17,14 @@ $moving-border-color: rgba(255,77,85,0.6);
   }
 }
 
+//////////////////
+// Modal
+//////////////////
 
-
+.modal-body {
+  display: table;
+  width: 100%;
+}
 
 //////////////////
 // Inverse navbar
@@ -31,7 +37,8 @@ $moving-border-color: rgba(255,77,85,0.6);
   .navbar-brand {
     color: $navbar-inverse-brand-color;
     transition: color 0.25s;
-    margin-left: 17.5px !important;
+    text-align: center;
+    margin-left: 10px !important;
     &::before,
     &::after {
       box-sizing: border-box;
@@ -45,38 +52,7 @@ $moving-border-color: rgba(255,77,85,0.6);
     &:hover {
       color: $navbar-inverse-brand-color;
      }
-    /*
 
-    &:hover {
-      color: $navbar-inverse-brand-color;
-     }
-     // Set up base styles, we're going to scale instead of animating width/height
-     &::before,
-     &::after {
-       top: 0;
-       left: 0;
-       height: 100%;
-       width: 100%;
-       transform-origin: center; // Ensure scaling is done from the center (expands outwards)
-     }
-
-     // scale3d(<scale-horizontal>, <scale-vertical>, <scale-depth>);
-     &::before {
-       border-bottom: 2px solid $moving-border-color;
-       transform: scale3d(0,1,1); // Shrink only width
-     }
-
-     &::after {
-       transform: scale3d(1,0,1); // Shrink only height
-     }
-
-
-     &:hover::before,
-     &:hover::after {
-       transform: scale3d(1,1,1); // Show full-size
-       transition: transform 0.5s;
-     }
-     */
   }
 
   .navbar-text {

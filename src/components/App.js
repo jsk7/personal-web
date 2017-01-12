@@ -1,19 +1,27 @@
 import React, { PropTypes } from 'react';
-import { Grid, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Grid, Navbar, Nav, NavItem, NavDropdown, MenuItem, Modal } from 'react-bootstrap';
 import {LinkContainer, IndexLinkContainer} from 'react-router-bootstrap';
 import LoadingBar from 'react-redux-loading-bar';
+import * as uiActions from '../actions/uiActions';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import EmailMe from './EmailMe';
 
 
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
 // component at the top-level.
-export default class App extends React.Component {
+export class App extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+  }
 
   render() {
 
 
     return (
       <div>
+        <EmailMe ui={this.props.ui} uiActions={this.props.uiActions} />
         <Navbar fluid inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
@@ -32,13 +40,10 @@ export default class App extends React.Component {
               <LinkContainer to="/code">
                 <NavItem eventKey={1} href="#">code</NavItem>
               </LinkContainer>
-              <LinkContainer to="/prints">
-                <NavItem eventKey={2} href="#">prints</NavItem>
-              </LinkContainer>
-              <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-                <MenuItem eventKey={3.1}>change mode</MenuItem>
+              <NavDropdown eventKey={3} title="contact.me" id="basic-nav-dropdown">
+                <MenuItem eventKey={3.1} onClick={this.props.uiActions.openModal}>E-mail</MenuItem>
                 <MenuItem divider />
-                <MenuItem eventKey={3.3}>contact.me</MenuItem>
+                <MenuItem eventKey={3.3}><a className="no-style">Linkedin</a></MenuItem>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
@@ -55,6 +60,26 @@ export default class App extends React.Component {
   }
 }
 
+
 App.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.element,
+  uiActions: PropTypes.object.isRequired,
+  ui: PropTypes.object
 };
+
+function mapStateToProps(state) {
+  return {
+    ui: state.ui
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    uiActions: bindActionCreators(uiActions, dispatch)
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

@@ -2,6 +2,11 @@ div .git_avatar {
   margin-top: 40px;
 }
 
+.code {
+
+
+}
+
 div .gmap {
   height: 200vh;
   width: 100%;
@@ -28,15 +33,6 @@ div .circle {
 
 .git-margin {
   margin-top: 15vh;
-}
-
-.no-style {
-  text-decoration: none;
-  color:inherit;
-}
-.no-style:hover {
-  text-decoration: none;
-  color:inherit;
 }
 
 .repo_name {
@@ -119,16 +115,6 @@ div .circle {
   &:hover:after {
     color: #fff;
   }
-}
-
-.git-logo {
-  position: relative;
-  height: 100%;
-  display: block;
-  margin: auto;
-  margin-top: -24%;
-  z-index: 3000;
-  color: white;
 }
 
 .example-enter {
