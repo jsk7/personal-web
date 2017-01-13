@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Grid, Navbar, Nav, NavItem, NavDropdown, MenuItem, Modal } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import {LinkContainer, IndexLinkContainer} from 'react-router-bootstrap';
 import LoadingBar from 'react-redux-loading-bar';
 import * as uiActions from '../actions/uiActions';

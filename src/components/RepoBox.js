@@ -70,5 +70,6 @@ RepoBox.propTypes = {
   children: PropTypes.element,
   href: PropTypes.string,
   boxClassName: PropTypes.string,
-  contentClassName: PropTypes.string
+  contentClassName: PropTypes.string,
+  repo: PropTypes.object
 };

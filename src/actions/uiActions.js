@@ -12,7 +12,7 @@ export function closeModal() {
 export function copyToClipboard(e) {
   e.preventDefault();
   e.target.select();
-  var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+  const iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
   if(iOS) return; // Dado que no se puede copiar datos al clipboard de ios :(
   document.execCommand('copy');
   return { type: types.COPY_MAIL };

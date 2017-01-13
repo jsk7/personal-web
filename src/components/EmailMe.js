@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import {  Modal, Button, Col, Image, Grid, Tooltip, OverlayTrigger } from 'react-bootstrap';
+import {  Modal, Button, Col, Image } from 'react-bootstrap';
 
 
 export default class EmailMe extends React.Component {
@@ -21,7 +21,7 @@ export default class EmailMe extends React.Component {
             <a className="no-style"
                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${mail.address}&su=${mail.subject}&body=${mail.body}`}>
             <div className="mail-logo">
-              <Image responsive src="../icons/logo_gmail.png" />
+              <Image responsive src={require("../icons/logo_gmail.png")} />
             </div>
             </a>
           </Col>
@@ -29,7 +29,7 @@ export default class EmailMe extends React.Component {
             <a className="no-style"
                href={`http://compose.mail.yahoo.com/?to=${mail.address}&subject=${mail.subject}&body=${mail.body}`}>
             <div className="mail-logo yahoo">
-              <Image responsive src="../icons/logo_yahoo.png" />
+              <Image responsive src={require("../icons/logo_yahoo.png")} />
             </div>
             </a>
           </Col>
@@ -37,7 +37,7 @@ export default class EmailMe extends React.Component {
             <a className="no-style"
                href={`https://outlook.live.com/owa/?path=/mail/action/compose&to=${mail.address}&subject=${mail.subject}&body=${mail.body}`}>
             <div className="mail-logo">
-              <Image responsive src="../icons/logo_outlook.png" />
+              <Image responsive src={require("../icons/logo_outlook.png")} />
             </div>
             </a>
           </Col>
@@ -76,13 +76,9 @@ const mail = {
   subject: 'Contacto Web',
   body: 'Hola Juani,',
   address: 'juan.biltes@gmail.com'
-}
-
-const tooltip = (
-  <Tooltip id="tooltip"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
-);
+};
 
 EmailMe.propTypes = {
   uiActions: PropTypes.object.isRequired,
   ui: PropTypes.object
-}
+};

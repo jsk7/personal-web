@@ -1,5 +1,4 @@
 import React, {PropTypes} from 'react';
-import {Link} from 'react-router';
 import * as gitActions from '../actions/gitActions';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';

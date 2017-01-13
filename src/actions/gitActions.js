@@ -25,8 +25,7 @@ export function fetchGithubProfileData() {
       dispatch(fetchGeolocationData(json.location));
       dispatch(fetchGithubReposData(json.repos_url));
       dispatch(fetchGithubLovedReposData(json.starred_url));
-    }).catch(function(err) {
-      console.log(err);
+    }).catch(function() {
       dispatch({ type: types.GITHUB_PROFILE_FAILED });
       return dispatch(hideLoading());
     });
@@ -45,8 +44,7 @@ export function fetchGeolocationData(stringPlace) {
     })
     .then(function(json) {
       return dispatch({ type: types.GMAPS_GEOLOCATION_GIT_SUCCESS, locationData: json});
-    }).catch(function(err) {
-      console.log(err);
+    }).catch(function() {
       return dispatch({ type: types.GMAPS_GEOLOCATION_GIT_FAILED });
     });
   };
@@ -65,8 +63,7 @@ export function fetchGithubReposData(api_url) {
     })
     .then(function(json) {
       return dispatch({ type: types.GITHUB_REPOS_SUCCESS, repos: json});
-    }).catch(function(err) {
-      console.log(err);
+    }).catch(function() {
       return dispatch({ type: types.GITHUB_REPOS_FAILED });
     });
   };
@@ -90,11 +87,10 @@ export function fetchGithubLovedReposData(api_url) {
 
       json.sort(
         (a,b) => (b.stargazers_count-a.stargazers_count)
-      )
+      );
       dispatch({ type: types.GITHUB_LOVEDREPOS_SUCCESS, repos: json});
       return dispatch(hideLoading());
-    }).catch(function(err) {
-      console.log(err);
+    }).catch(function() {
       dispatch({ type: types.GITHUB_LOVEDREPOS_FAILED });
       return dispatch(hideLoading());
     });

@@ -1,10 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {Col, Row, Grid} from 'react-bootstrap';
 
 
-const HomePage = (props) => {
+const HomePage = () => {
   return (
     <ReactCSSTransitionGroup
       transitionName="fade"
@@ -17,11 +16,11 @@ const HomePage = (props) => {
       key={1}>
     <div className="home">
       <div className="banner">
-        <img className="profile" src="../icons/profile-size4-v2.jpg" />
+        <img className="profile" src={require("../icons/profile-size4-v2.jpg")} />
       </div>
       <Grid>
         <Row>
-          <Col lg={1} md={1} sm={1} xsHidden></Col>
+          <Col lg={1} md={1} sm={1} xsHidden />
           <Col lg={10} md={10} sm={10} xs={12}>
           <div className="border left">
           <div className="border top">
@@ -29,7 +28,7 @@ const HomePage = (props) => {
           <div className="border bottom">
             <Col lg={2} md={2} sm={2} xs={2}>
               <div className="left">
-                <img className="hand" src="../icons/hand-leftside-v2.jpg" />
+                <img className="hand" src={require("../icons/hand-leftside-v2.jpg")} />
               </div>
             </Col>
             <Col lg={8} md={8} sm={8} xs={8} className="scroll">
@@ -90,7 +89,7 @@ const HomePage = (props) => {
             </Col>
             <Col lg={2} md={2} sm={2} xs={2}>
               <div className="right">
-                <img className="hand" src="../icons/hand-rightside-v2.jpg" />
+                <img className="hand" src={require('../icons/hand-rightside-v2.jpg')} />
               </div>
             </Col>
             </div>
@@ -98,11 +97,11 @@ const HomePage = (props) => {
             </div>
             </div>
           </Col>
-          <Col lg={1} md={1} sm={1} xsHidden></Col>
+          <Col lg={1} md={1} sm={1} xsHidden />
         </Row>
       </Grid>
       <div className="footer">
-        <img src="../icons/legs-size3.jpg" />
+        <img src={require("../icons/legs-size3.jpg")} />
       </div>
     </div>
     </ReactCSSTransitionGroup>

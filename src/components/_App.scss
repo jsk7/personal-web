@@ -27,7 +27,6 @@
 
   }
 
-  &::before,
   &::after {
   box-sizing: border-box;
   content: '';
@@ -51,9 +50,15 @@
   }
 
   &::before {
+    box-sizing: border-box;
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    margin: 5px;
     border: 2px solid transparent; // We're animating border-color again
     border-top-color: rgba(255,77,85,0.3); // Show borders
-    border-right-color: rgba(255,77,85,0.3);
+    border-right-color: rgba(255,77,85,0.3) !important;
     border-bottom-color: rgba(255,77,85,0.3);
     border-left-color: rgba(255,77,85,0.3);
 
