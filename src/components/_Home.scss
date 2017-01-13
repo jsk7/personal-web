@@ -1,4 +1,4 @@
-$signboard-size: 65vmax;
+$signboard-size: 62vmax;
 
 div .home {
   position: absolute;
@@ -6,7 +6,6 @@ div .home {
   padding-top: 65vh;
   text-align: center;
   width: 100%;
-  height: $signboard-size;
   background-color: white;
 
 
@@ -63,7 +62,7 @@ div .home {
         position: absolute;
         display: flex;
         width: 76.5%;
-        height: 100%;
+        height: $signboard-size;
         margin-left: 11.8%;
         border-bottom: 2px solid rgb(240,240,240);
       }
@@ -71,13 +70,17 @@ div .home {
 
 
   }
+  .scroll {
+    overflow-y: scroll;
+    height: $signboard-size;
+  }
 
   .central {
     top: 0;
     display: table;
     position: relative;
-    height: $signboard-size;
     width: 100%;
+    height: $signboard-size;
 
     h1 {
 
@@ -148,7 +151,7 @@ div .home {
       width: 1px;
       background-color: rgba(0,0,0,0.1);
       left: 5px;
-      height: 65vmax;
+      height: 45vmax;
     }
   }
 

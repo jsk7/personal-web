@@ -63,7 +63,7 @@ export default function githubProfile(state = initialState.github, action) {
       newState.loved_repos = action.repos;
       return newState;
 
-    case t.GITHUB_REPOS_FAILED:
+    case t.GITHUB_LOVEDREPOS_FAILED:
       newState = objectAssign({}, state);
       newState.isFetching = false;
       return newState;
