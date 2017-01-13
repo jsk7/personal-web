@@ -45,7 +45,7 @@ class Code extends React.Component {
                   </Col>
 
                   <Col lg={6} md={6} sm={6} xs={6}>
-                  <Col lg={12} md={12} xsHidden><div className="git-margin" /></Col>
+                  <Col lg={12} md={12} sm={12} xsHidden><div className="git-margin" /></Col>
                     <h4 className="git-name">
                       Mr.
                       <a href={this.props.git.url}> @futurejuan</a>

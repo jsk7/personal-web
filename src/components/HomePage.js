@@ -33,18 +33,56 @@ const HomePage = (props) => {
         </Col>
         <Col lg={8} md={8} sm={8} xs={8}>
           <div className="central">
-            <h1>Juan Ignacio Biltes</h1>
-            <h4>Desarrollador Front-End</h4>
+            <h1 className="title">Front-End Dev</h1>
+            <h4>Código, diseño y usabilidad</h4>
             <hr />
-            <p>
-              Aptitudes:
-            </p>
             <Row>
-              <Col lg={6} md={6} sm={6} xs={6}>
-                some some
+              <Col lg={8} md={8} sm={8} xs={12}>
+                <Row>
+                  <h1 className="description">Sobre mi:</h1>
+                  <p>
+                    Soy <span>Juan Ignacio Biltes</span>, un desarrollador creativo
+                    de front-end que le encanta crear aplicaciones intuitivas, atractivas
+                    y de calidad para todos los dispositivos que existen hoy en día.
+                    <br />
+                    Creo que una buena experiencia está en los detalles y soy muy dedicado
+                    con mi trabajo, simplemente me encanta realizar aplicaciones
+                    y trabajar con personas que compartan el mismo sentimiento
+                  </p>
+                </Row>
+                <Row>
+                  <Col lg={6} md={6} sm={6} xs={12}>
+                    <h2 className="sub">Skills</h2>
+                    <ul>
+                      <li>HTML5, SASS, JS</li>
+                      <li>React, Redux</li>
+                      <li>Java, SQL, noSQL, REST</li>
+                    </ul>
+                  </Col>
+                  <Col lg={6} md={6} sm={6} xs={12}>
+                    <h2 className="sub">Herramientas</h2>
+                    <ul>
+                      <li>Git</li>
+                      <li>Atom</li>
+                      <li>NPM, Webpack</li>
+                    </ul>
+                  </Col>
+                </Row>
+                <Row>
+                  <p>
+                    Soy estudiante en tercer año de la carrera de Ingeniería en Sistemas
+                    de Información en la Universidad Tecnológica Nacional y en mi tiempo
+                    libre podes encontrarme seguramente haciendo algún tipo de deporte o
+                    sacando fotos en algún parque
+                  </p>
+                </Row>
               </Col>
-              <Col lg={6} md={6} sm={6} xs={6}>
-                <h4>else else</h4>
+              <Col lg={4} md={4} sm={4} xs={12}>
+                <Row className="pad">
+                  <div className="vertical-line" />
+                  <h1 className="description">Detalles:</h1>
+                  <h2 className="sub">Nombre</h2>
+                </Row>
               </Col>
             </Row>
           </div>

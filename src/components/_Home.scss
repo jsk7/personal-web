@@ -9,10 +9,7 @@ div .home {
   height: $signboard-size;
   background-color: white;
 
-  ul {
-    text-align: left;
-    font-size: 10px;
-  }
+
 
   .border {
     position: relative;
@@ -82,19 +79,78 @@ div .home {
     height: $signboard-size;
     width: 100%;
 
-    & > h1 {
-      font-size: calc(12px + 2.3vw);
-      line-height: 40px;
+    h1 {
+
+      &.title {
+        padding-top: 10px;
+        font-weight: 900;
+        font-family: "Teko", serif !important;
+        color: rgba(255,77,85,1);
+        text-transform: uppercase;
+        font-size: calc(12px + 5vw);
+        line-height: calc(12px + 5vw);
+      }
+
+      &.description {
+        text-align: left;
+        font-weight: 200;
+        color: rgba(0,0,0,0.6);
+        font-family: "Palanquin", serif !important;
+        font-size: calc(16px + 0.8vw);
+      }
     }
+
+    h2 {
+       &.sub {
+         text-align: left;
+         color: rgba(0,0,0,1);
+         font-size: calc(12px + 0.4vw);;
+       }
+    }
+
+
 
     & > h4 {
       display: block;
+      font-family: "Teko", serif !important;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: calc(12px + 0.6vw);
+    }
+
+    p {
+      text-align: left;
       font-size: calc(12px + 0.5vw);
+      font-family: "Palanquin", serif !important;
+
+      & > span {
+        //font-family: "Amatic SC", serif !important;
+      }
+    }
+
+    ul {
+      padding-left: 14px;
+      text-align: left;
+      font-size: calc(12px + 0.5vw);
+    }
+
+    .pad {
+      padding-left: 15px;
     }
   }
 
 
+  .vertical-line {
 
+    &::before {
+      position: absolute;
+      content: "";
+      width: 1px;
+      background-color: rgba(0,0,0,0.1);
+      left: 5px;
+      height: 65vmax;
+    }
+  }
 
   .banner {
     position: absolute;
