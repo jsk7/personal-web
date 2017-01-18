@@ -9,7 +9,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Code extends React.Component {
   constructor(props, context) {
-    if(props.git.user == "") props.gitActions.fetchGithubProfileData();
+    if(props.git.user == "") props.gitActions.fetchGithubProfileData(fetch);
     super(props, context);
   }
 

@@ -5,7 +5,7 @@ import { showLoading, hideLoading } from 'react-redux-loading-bar';
 
 
 // example of a thunk using the redux-thunk middleware
-export function fetchGithubProfileData() {
+export function fetchGithubProfileData(fetch) {
 
   return dispatch => {
   // Reducers may handle this to set a flag like isFetching

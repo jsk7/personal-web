@@ -41,13 +41,13 @@ const HomePage = () => {
                     <Row>
                       <h1 className="description">Sobre mi:</h1>
                       <p>
-                        Soy <span>Juan Ignacio Biltes</span>, un desarrollador creativo
-                        de front-end que le encanta crear aplicaciones intuitivas, atractivas
-                        y de calidad para todos los dispositivos que existen hoy en día.
+                        Mi nombre es Juan Ignacio Biltes, desarrollador creativo de front-end enfocado
+                        en crear soluciones atractivas e intuitivas para el usuario mediante código y
+                        estructuras performantes.
                         <br />
-                        Creo que una buena experiencia está en los detalles y soy muy dedicado
-                        con mi trabajo, simplemente me encanta realizar aplicaciones
-                        y trabajar con personas que compartan el mismo sentimiento
+                        Autodidacta por naturaleza, constantemente busco nuevas y mejores herramientas
+                        que me permitan crear soluciones superadoras, y si es en equipo mejor aún,
+                        “dos cabezas piensan mejor que una”.
                       </p>
                     </Row>
                     <Row>
@@ -70,18 +70,24 @@ const HomePage = () => {
                     </Row>
                     <Row>
                       <p>
-                        Soy estudiante en tercer año de la carrera de Ingeniería en Sistemas
+                        Actualmente me encuentro en tercer año de la carrera de Ingeniería en Sistemas
                         de Información en la Universidad Tecnológica Nacional y en mi tiempo
-                        libre podes encontrarme seguramente haciendo algún tipo de deporte o
-                        sacando fotos en algún parque
+                        libre podrás encontrarme haciendo algún tipo de deporte o
+                        sacando fotos en algún parque.
                       </p>
                     </Row>
                   </Col>
                   <Col lg={4} md={4} sm={4} xs={12}>
                     <Row className="pad">
-                      <div className="vertical-line" />
+                      <Col xsHidden><div className="vertical-line" /></Col>
                       <h1 className="description">Detalles:</h1>
-                      <h2 className="sub">Nombre</h2>
+                      <h2 className="sub">Nombre:</h2>
+                      <h3 className="data">Juan Ignacio Biltes</h3>
+                      <h2 className="sub">Edad:</h2>
+                      <h3 className="data">23</h3>
+                      <h2 className="sub">Estudios:</h2>
+                      <h3 className="data">Ingeniería en Sistemas de Información</h3>
+
                     </Row>
                   </Col>
                 </Row>

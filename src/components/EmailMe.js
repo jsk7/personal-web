@@ -53,7 +53,7 @@ export default class EmailMe extends React.Component {
               transitionLeave={true}
               transitionLeaveTimeout={500}
               key={1}>
-              {this.props.ui.mailCopied && <p>Mail copiado al portapapeles, use CTRL + V para pegar</p>}
+              {this.props.ui.mailCopied && <p>Mail copiado al portapapeles, use {navigator.platform === 'MacIntel' ? 'CMD + V' : 'CTRL + V'} para pegar</p>}
             </ReactCSSTransitionGroup>
             <input size="30" type="text"
                   className={'mail ' + (this.props.ui.mailCopied ? 'moved-down' : '')}
