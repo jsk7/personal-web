@@ -1,9 +1,9 @@
 import React, {PropTypes} from 'react';
 import {Col} from 'react-bootstrap';
-import {GitLogo} from './GitLogo';
+import GitLogo from './GitLogo';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-export class RepoBox extends React.Component {
+export default class RepoBox extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {

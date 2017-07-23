@@ -3,10 +3,17 @@ div .git_avatar {
 }
 
 div .gmap {
-  height: 200vh;
+  height: 100%;
   width: 100%;
+  position: fixed;
+  transition: margin-top 100ms ease-in;
 
-  &.center {
+  &.expanded {
+    margin-top: -50px;
+  }
+
+  &.mobile {
+    position: relative;
     height: 140px;
   }
 }
@@ -26,8 +33,10 @@ div .circle {
 }
 
 .git-name {
-
-  font-size: 4vh;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  height: 280px;
 }
 
 .git-margin {

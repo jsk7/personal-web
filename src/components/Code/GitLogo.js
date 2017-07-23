@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 
-export const GitLogo = (props) => {
+const GitLogo = (props) => {
   return (
     <svg className="git-logo" width="128" height="128" viewBox="-15 0 150 150" xmlns="http://www.w3.org/2000/svg" clipRule="evenodd">
      <g>
@@ -14,3 +14,5 @@ export const GitLogo = (props) => {
 GitLogo.propTypes = {
   color: PropTypes.string
 };
+
+export default GitLogo;

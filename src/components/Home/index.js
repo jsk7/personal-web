@@ -3,7 +3,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {Col, Row, Grid} from 'react-bootstrap';
 
 
-const HomePage = () => {
+const Home = () => {
   return (
     <ReactCSSTransitionGroup
       transitionName="fade"
@@ -16,7 +16,7 @@ const HomePage = () => {
       key={1}>
     <div className="home">
       <div className="banner">
-        <img className="profile" src={require("../icons/profile-size4-v2.jpg")} />
+        <img className="profile" src={require("../../icons/profile-size4-v2.jpg")} />
       </div>
       <Grid>
         <Row>
@@ -28,7 +28,7 @@ const HomePage = () => {
           <div className="border bottom">
             <Col lg={2} md={2} sm={2} xs={2}>
               <div className="left">
-                <img className="hand" src={require("../icons/hand-leftside-v2.jpg")} />
+                <img className="hand" src={require("../../icons/hand-leftside-v2.jpg")} />
               </div>
             </Col>
             <Col lg={8} md={8} sm={8} xs={8} className="scroll">
@@ -56,14 +56,15 @@ const HomePage = () => {
                         <ul>
                           <li>HTML5, SASS, JS</li>
                           <li>React, Redux</li>
-                          <li>Java, SQL, noSQL, REST</li>
+                          <li>Mocha, chai, sinon</li>
+                          <li>Java, SQL, noSQL</li>
                         </ul>
                       </Col>
                       <Col lg={6} md={6} sm={6} xs={12}>
                         <h2 className="sub">Herramientas</h2>
                         <ul>
                           <li>Git</li>
-                          <li>Atom</li>
+                          <li>CI</li>
                           <li>NPM, Webpack</li>
                         </ul>
                       </Col>
@@ -73,7 +74,7 @@ const HomePage = () => {
                         Actualmente me encuentro en tercer año de la carrera de Ingeniería en Sistemas
                         de Información en la Universidad Tecnológica Nacional y en mi tiempo
                         libre podrás encontrarme haciendo algún tipo de deporte o
-                        sacando fotos en algún parque.
+                        con mi hobby de fotografia.
                       </p>
                     </Row>
                   </Col>
@@ -95,7 +96,7 @@ const HomePage = () => {
             </Col>
             <Col lg={2} md={2} sm={2} xs={2}>
               <div className="right">
-                <img className="hand" src={require('../icons/hand-rightside-v2.jpg')} />
+                <img className="hand" src={require('../../icons/hand-rightside-v2.jpg')} />
               </div>
             </Col>
             </div>
@@ -107,11 +108,11 @@ const HomePage = () => {
         </Row>
       </Grid>
       <div className="footer">
-        <img src={require("../icons/legs-size3.jpg")} />
+        <img src={require("../../icons/legs-size3.jpg")} />
       </div>
     </div>
     </ReactCSSTransitionGroup>
   );
 };
 
-export default HomePage;
+export default Home;

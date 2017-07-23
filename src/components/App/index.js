@@ -2,23 +2,15 @@ import React, { PropTypes } from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import {LinkContainer, IndexLinkContainer} from 'react-router-bootstrap';
 import LoadingBar from 'react-redux-loading-bar';
-import * as uiActions from '../actions/uiActions';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import EmailMe from './EmailMe';
+import EmailMe from '../EmailMe/index';
 
 
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
 // component at the top-level.
-export class App extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-  }
+export default class App extends React.PureComponent {
 
   render() {
-
-
     return (
       <div>
         <EmailMe ui={this.props.ui} uiActions={this.props.uiActions} />
@@ -55,8 +47,6 @@ export class App extends React.Component {
         <div className="children">
           {this.props.children}
         </div>
-
-
       </div>
     );
   }
@@ -68,20 +58,3 @@ App.propTypes = {
   uiActions: PropTypes.object.isRequired,
   ui: PropTypes.object
 };
-
-function mapStateToProps(state) {
-  return {
-    ui: state.ui
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    uiActions: bindActionCreators(uiActions, dispatch)
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
